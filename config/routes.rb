@@ -1,5 +1,7 @@
 TilesChallenge::Application.routes.draw do
 
+  get "castaways/index"
+  get "castaways/recruit"
   # Sidekiq web interface
   #   acess via localhost:3000/sidekiq
   require 'sidekiq/web'
