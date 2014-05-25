@@ -24,6 +24,7 @@ group :test do
   gem 'capybara'
   gem 'mongoid-rspec', '>= 1.4.6'
   gem 'timecop'
+	gem 'shoulda-matchers', '~> 2.6.1'
 end
 
 group :test, :development do
@@ -31,6 +32,11 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails', '>= 2.0.1'
+	gem 'guard-rspec'
+end
+
+group :development do
+  gem 'terminal-notifier-guard'
 end
 
 # Use debugger
