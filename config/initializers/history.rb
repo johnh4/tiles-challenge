@@ -1,1 +1,2 @@
-history = History.create
+$history = History.create
+puts $history

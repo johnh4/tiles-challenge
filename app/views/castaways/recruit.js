@@ -1,9 +1,9 @@
 $(function(){
 	console.log('recruit.js fired');
-	console.log('<%= @team.castaways %>');
+	console.log('<%= @team.castaways.count %>');
 	<% if @recruited %>
-		$('#'+'<%= @castaway.name %>' + '-tile').fadeTo(1000, 0);
+		$('#'+'<%= @name %>' + '-tile').fadeTo(1000, 0);
 	<% else %>
-		$('#'+'<%= @castaway.name %>' + '-tile').addClass('rival');
+		$('#'+'<%= @name %>' + '-tile').addClass('rival');
 	<% end  %>
 });

@@ -22,6 +22,7 @@ describe History do
 			expect do
 				name = "Jayden"
 				@history.add_name(name)
+				@history.reload
 			end.to change(@history, :total).by(1)
 		end
 	end

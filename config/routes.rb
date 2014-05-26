@@ -8,6 +8,7 @@ TilesChallenge::Application.routes.draw do
 
   #get "castaways/recruit"
 	get "castaways/index"
+	get "castaways/game_over", to: 'castaways#game_over', as: :game_over
 	post "teams/:team_id/castaways/recruit", to: 'castaways#recruit', as: :recruit_castaway
 
 	root 'castaways#index'

@@ -12,7 +12,12 @@ class History
 	end
 
 	def add_name(name)
-		self[:popularity][name] += 1
+		#use a copy so that mongoid will save
+		popularity_copy = {}
+		self[:popularity].each { |k,v| popularity_copy[k] = v }
+		popularity_copy[name] += 1
+		self[:popularity] = popularity_copy
+		#self[:popularity][name] += 1
 		self.total += 1
 		save
 	end

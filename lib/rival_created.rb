@@ -1,0 +1,2 @@
+class RivalCreated < StandardError
+end

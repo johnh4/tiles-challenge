@@ -1,0 +1,10 @@
+= @popular
+= @total
+#game-over
+	p
+		The game is over!
+		ul.popular-castaways
+			- @popular.each do |castaway|
+				li.popular-castaway
+					= castaway[0]
+					= castaway[1]
