@@ -6,9 +6,6 @@ class CastawaysController < ApplicationController
   def recruit
 		@team = Team.find(params[:team_id])
 		@castaway = @team.castaways.create(castaway_params)
-		#@team = Team.find(params[:team_id])
-		#@castaway = @team.castaways.create(params[:castaway].permit(:name))
-		#render :index
 		@recruited = true
   end
 
