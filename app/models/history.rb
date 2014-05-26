@@ -20,8 +20,8 @@ class History
 	def most_popular
 		count = 10
 		pop = self[:popularity].dup
-		keys = pop.sort{|a,b| b[1] <=> a[1]}
-		names = keys[0, count]
+		names_with_count = pop.sort{|a,b| b[1] <=> a[1]}
+		names = names_with_count[0, count]
 	end
 
 end
