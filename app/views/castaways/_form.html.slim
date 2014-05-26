@@ -1,0 +1,5 @@
+li
+	= name
+	= form_for([@team, @team.castaways.build], url: recruit_castaway_path(@team), remote: true) do |f|
+		= f.hidden_field :name, value: name
+		= f.submit "submit"

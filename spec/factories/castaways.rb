@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :castaway do
-    name "MyString"
+		sequence(:name) { |n| "Person #{n}" }
+		team
   end
 end

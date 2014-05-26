@@ -1,13 +1,16 @@
-TilesChallenge::Application.routes.draw do
-
-  get "castaways/index"
-  get "castaways/recruit"
+TilesChallenge::Application.routes.draw do 
   # Sidekiq web interface
   #   acess via localhost:3000/sidekiq
+
   require 'sidekiq/web'
+	
   mount Sidekiq::Web  => 'sidekiq'
 
+  #get "castaways/recruit"
+	get "castaways/index"
+	post "teams/:team_id/castaways/recruit", to: 'castaways#recruit', as: :recruit_castaway
 
+	root 'castaways#index'
 
 
 
