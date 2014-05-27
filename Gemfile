@@ -25,6 +25,7 @@ group :test do
   gem 'mongoid-rspec', '>= 1.4.6'
   gem 'timecop'
 	gem 'shoulda-matchers', '~> 2.6.1'
+	gem 'selenium-webdriver'
 end
 
 group :test, :development do

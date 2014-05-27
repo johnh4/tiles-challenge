@@ -4,12 +4,20 @@ describe CastawaysController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      get 'index', format: 'js'
       response.should be_success
 			response.should render_template('index')
     end
+  end
+
+  describe "GET 'intro'" do
+    it "returns http success" do
+      get 'intro'
+      response.should be_success
+			response.should render_template('intro')
+    end
 		it "has access to the global NAMES constant" do
-			get :index
+			get :intro
 			NAMES.length.should be(64)
 		end
   end
@@ -19,7 +27,6 @@ describe CastawaysController do
 
 		context "when fed a team" do
 			let!(:team) { Team.create }
-			#let!(:castaway) { team.castaways.create(name: 'Tester', team: team) }
 			let!(:castaway) { FactoryGirl.attributes_for(:castaway, team: team) }
 
 			it "returns http success" do
@@ -36,7 +43,7 @@ describe CastawaysController do
 			end
 			it "should create the correct castaway" do
 				post :recruit, team_id: team, castaway: castaway, format: 'js'
-				assigns(:castaway).name.should eq castaway[:name]
+				assigns(:name).should eq castaway[:name]
 			end
 		end
   end

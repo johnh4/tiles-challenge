@@ -13,7 +13,7 @@ class CastawaysController < ApplicationController
 		@team_id = params[:team_id]
 		@team = Team.find(@team_id)
 		@name = castaway_params[:name]
-		@team.won?
+		#raise an exception and classify castaway as rival with a certain frequency
 		is_new_rival = rand(101) <= 30
 		if is_new_rival
 			raise RivalCreated.new "This person doesn't like you very much."
