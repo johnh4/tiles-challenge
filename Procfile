@@ -1,2 +1,2 @@
 web: rails server -p $PORT
-recruiter: bundle exec recruiter
+recruiter: bundle exec sidekiq
