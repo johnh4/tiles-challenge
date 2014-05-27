@@ -7,6 +7,6 @@ $(function(){
 		$('#notification').html("<%= @name %>" + " has joined your group!");
 	<% else %>
 		$('#'+'<%= @name %>' + '-tile').addClass('rival');
-		$('#notification').html("Something went wrong. " + "<%= @name %>" + " has formed his own group. Watch your back.");
+		$('#notification').html("Something went wrong. " + "<%= @name %>" + " has joined a different group. Watch your back.");
 	<% end  %>
 });
