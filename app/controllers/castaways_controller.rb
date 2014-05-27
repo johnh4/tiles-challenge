@@ -1,5 +1,10 @@
 class CastawaysController < ApplicationController
 	rescue_from RivalCreated, with: :new_rival
+
+	def intro
+		
+	end
+	
   def index
 		@team = Team.create
   end
@@ -16,7 +21,6 @@ class CastawaysController < ApplicationController
 			puts "full team"
 			redirect_to :game_over
 		elsif @team.unapproached?(@name)
-			#castaway = @team.castaways.create(name: @name)
 			Recruiter.perform_async(@name, @team_id, Time.now, $history.id.to_s)
 			@recruited = true
 		end
@@ -37,7 +41,6 @@ class CastawaysController < ApplicationController
 		end
 
 		def new_rival
-			#castaway = @team.castaways.create(name: @name, rival: true)
 			Recruiter.perform_async(@name, @team_id, Time.now, $history.id.to_s,true)
 			@recruited = false
 			render :recruit 

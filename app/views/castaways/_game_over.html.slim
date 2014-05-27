@@ -1,10 +1,8 @@
-= @popular
-= @total
-#game-over
-	p
-		The game is over!
-		ul.popular-castaways
-			- @popular.each do |castaway|
-				li.popular-castaway
-					= castaway[0]
-					= castaway[1]
+.container
+	#game-over
+		p
+			| The game is over! The most popular castaways are:
+			ul.popular-castaways
+				= render partial: 'popular_castaway', collection: @popular
+	= link_to "Index", index_path, { remote: true, class: "link-button btn"}
+	= link_to "Intro", intro_path, { class: "link-button btn" }

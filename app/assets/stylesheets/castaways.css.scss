@@ -54,3 +54,64 @@ body, html {
 	color: red;
 }
 
+/************* INTRO ****************/
+.intro-text {
+	font-size: 30px;
+	font-weight: bold;
+	display: none;
+	color: white;
+}
+#intro {
+	text-align:center;
+	.link-button {
+		position: absolute;
+		top: calc(50% - 20px);
+		left: calc(50% - 50px);
+	}
+}
+#intro span {
+	margin: 0 auto;
+}
+#intro-cont {
+	position: relative;
+	top: 25%;
+}
+.link-button {
+	width: 100px;
+	height: 40px;
+	animation: begin-animation 5s linear 0s infinite alternate;
+	-webkit-animation: begin-animation 5s linear 0s infinite alternate;
+	background: rgba(30,30,30,1);
+	text-transform: uppercase;
+	color: white;
+	//opacity: .5;
+}
+@-webkit-keyframes begin-animation {
+	0% {
+		//background: rgba(30,30,30,.1);
+		opacity: .3;
+	}
+	50% {
+		//background: rgba(30,30,30,.4);
+		opacity: .5;
+	}
+	100% {
+		//background: rgba(30,30,30,.1);
+		opacity: .3;
+	}
+}
+
+/************* GAME_OVER ****************/
+.popular-castaway {
+}
+ul.popular-castaways {
+	list-style: none;
+}
+#game-over {
+	color: white;
+	.link-button, .btn {
+		position: relative;
+		margin-left: 50px;
+		height: 500px;
+	}
+}

@@ -13,3 +13,51 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function(){
+	function playIntro(){
+		console.log('playing intro.');
+		var duration = 700;
+		var multiplier = .5;
+		$('#intro-1').fadeIn(duration, function(){
+			$('#intro-1').fadeOut(duration, function(){
+				$('#intro-2').fadeIn(duration * multiplier, function(){
+					$('#intro-2').fadeOut(duration * multiplier, function(){
+						$('#intro-3').fadeIn(duration * multiplier, function(){
+							$('#intro-3').fadeOut(duration * multiplier, function(){
+								$('#intro-4').fadeIn(duration, function(){
+									$('#intro-4').fadeOut(duration, function(){
+										$('#intro-5').fadeIn(duration, function(){
+											$('#intro-5').fadeOut(duration, function(){
+												$('#intro-6').fadeIn(duration, function(){
+													$('#intro-6').fadeOut(duration, function(){
+														$('#intro-7').fadeIn(duration, function(){
+															$('#intro-7').fadeOut(duration, function(){
+																$('#intro-8').fadeIn(duration, function(){
+																	$('#intro-8').fadeOut(duration, function(){
+																		$('#intro-9').fadeIn(duration, function(){
+																			$('#intro-9').fadeOut(duration, function(){
+																				$('#intro-10').fadeIn(duration, function(){
+																					$('#intro-10').fadeOut(duration, function(){
+																					});	
+																				});	
+																			});	
+																		});	
+																	});	
+																});	
+															});	
+														});	
+													});	
+												});	
+											});	
+										});	
+									});	
+								});	
+							});	
+						});	
+					});	
+				});
+			});	
+		});
+	}
+	playIntro();
+});
