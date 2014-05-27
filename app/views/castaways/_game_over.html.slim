@@ -1,8 +1,11 @@
 .container
 	#game-over
-		p
-			| The game is over! The most popular castaways are:
-			ul.popular-castaways
-				= render partial: 'popular_castaway', collection: @popular
-	= link_to "Index", index_path, { remote: true, class: "link-button btn"}
-	= link_to "Intro", intro_path, { class: "link-button btn" }
+		- if @team.won?
+			p You win! Many of the most demanded castaways joined your group. Your team got stuff done. You grew crops. You found, and built shelter. You slayed monsters. Personally. Well done.
+		- else
+			p You lose! You weren't able to recruit several of the most demanded castaways.
+		p The most popular castaways are:
+		ul.popular-castaways
+			= render partial: 'popular_castaway', collection: @popular
+		= link_to "Choose Again", index_path, { remote: true, class: "link-button btn"}
+		= link_to "Intro", intro_path, { class: "link-button btn" }

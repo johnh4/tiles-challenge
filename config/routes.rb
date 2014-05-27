@@ -7,7 +7,7 @@ TilesChallenge::Application.routes.draw do
   mount Sidekiq::Web  => 'sidekiq'
 
 	get "castaways/index", to: "castaways#index", as: :index
-	get "castaways/game_over", to: 'castaways#game_over', as: :game_over
+	get "castaways/:team_id/game_over", to: 'castaways#game_over', as: :game_over
 	get "castaways/intro", to: 'castaways#intro', as: :intro
 	post "teams/:team_id/castaways/recruit", to: 'castaways#recruit', as: :recruit_castaway
 

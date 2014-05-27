@@ -1,5 +1,8 @@
 .container
-	#board
-		ul.tiles
-			- NAMES.each do |name|
-				= render "form", name: name
+	#index
+		#board
+			ul.tiles
+				- NAMES.shuffle.each do |name|
+					= render "form", name: name
+		#notification
+		= link_to "Done", game_over_path(@team), { remote: true, class: "link-button btn" }

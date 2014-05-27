@@ -10,16 +10,15 @@ class CastawaysController < ApplicationController
   end
 
   def recruit
-		puts "$history: #{$history}"
 		@team_id = params[:team_id]
 		@team = Team.find(@team_id)
 		@name = castaway_params[:name]
+		@team.won?
 		is_new_rival = rand(101) <= 30
 		if is_new_rival
 			raise RivalCreated.new "This person doesn't like you very much."
 		elsif @team.is_full?
-			puts "full team"
-			redirect_to :game_over
+			redirect_to game_over_path(@team)
 		elsif @team.unapproached?(@name)
 			Recruiter.perform_async(@name, @team_id, Time.now, $history.id.to_s)
 			@recruited = true
@@ -30,7 +29,7 @@ class CastawaysController < ApplicationController
 		$history.reload
 		@total = $history.total
 		@popular = $history.most_popular
-		puts "@popular: #{@popular}"
+		@team = Team.find(params[:team_id])
 	end
 
 	private
